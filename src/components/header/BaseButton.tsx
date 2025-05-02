@@ -46,7 +46,7 @@ export function BaseButton({
       <button
           aria-label={ariaLabel}
           onClick={onClick}
-          className={`flex items-center justify-center p-3 rounded-xl dark-gray text-xs border border-solid border-dark-50 bg-dark-900 hover:bg-zinc-800 transition border-gray ${className}`}
+          className={`flex items-center justify-center p-3 rounded-xl dark-gray text-xs border border-solid text-white/60 border-dark-50 bg-dark-900 hover:bg-zinc-800 transition ${className}`}
       >
         {children}
       </button>

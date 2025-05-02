@@ -60,7 +60,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                     <Link
                         href={link.href}
                         onClick={onClose}
-                        className="flex items-center justify-between text-sm p-3 rounded-lg bg-dark-900 border border-dark-50 hover:bg-zinc-800 transition"
+                        className="flex items-center justify-between text-sm p-3 rounded-lg text-white/60 bg-dark-900 border border-dark-50 hover:bg-zinc-800 transition"
                     >
                         <span className="font-medium">{link.label}</span>
                         <ArrowUpRight className="w-4" />
