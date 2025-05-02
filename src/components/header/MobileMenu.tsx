@@ -1,0 +1,72 @@
+'use client';
+
+import { NAV_LINKS } from './header.config';
+import Link from 'next/link';
+import { ArrowUpRight } from 'iconoir-react';
+import { motion } from 'framer-motion';
+
+type MobileMenuProps = {
+    /**
+     * Callback to close the menu when a link is clicked
+     */
+    onClose: () => void;
+};
+
+// Parent animation config for staggered children
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.1,
+        },
+    },
+};
+
+// Individual link animation
+const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            ease: 'easeOut',
+            duration: 0.3,
+        },
+    },
+};
+
+/**
+ * MobileMenu
+ *
+ * Displays a vertical, animated list of navigation links for mobile view.
+ *
+ * - Uses Framer Motion for staggered item animations
+ * - Links are sourced from the centralized NAV_LINKS config
+ * - Clicking a link calls `onClose` to dismiss the menu
+ */
+export function MobileMenu({ onClose }: MobileMenuProps) {
+    return (
+        <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="flex flex-col gap-2"
+        >
+            {NAV_LINKS.map((link) => (
+                <motion.div key={link.href} variants={itemVariants}>
+                    <Link
+                        href={link.href}
+                        onClick={onClose}
+                        className="flex items-center justify-between text-sm p-3 rounded-lg bg-dark-900 border border-dark-50 hover:bg-zinc-800 transition"
+                    >
+                        <span className="font-medium">{link.label}</span>
+                        <ArrowUpRight className="w-4" />
+                    </Link>
+                </motion.div>
+            ))}
+        </motion.div>
+    );
+}

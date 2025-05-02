@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 320px;
+  --breakpoint-md: 640px;
+  --breakpoint-lg: 1280px;
+
+  --color-dark-50: rgba(255, 255, 255, 0.04);
+  --color-dark-800: #4d4d4d;
+  --color-dark-900: #0d0d0d;
+  --color-dark-950: #000000;
+
+}
+
+@theme inline {
+  --color-background: var(--color-dark-950);
+  --color-foreground: var(--color-dark-800);
+}
+
+
+@layer utilities {
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-dark-950);
+    --foreground: var(--color-dark-800);
+  }
+}
+
+body {
+  background: var(--color-dark-950);
+  color: var(--color-dark-800);
+  font-family: 'JetBrains Mono', monospace;
+}
