@@ -10,7 +10,7 @@ export function SnippetCard({ snippet }: Props) {
     const preview = snippet.content.split('\n')[0];
 
     return (
-        <div className="relative bg-dark-900 rounded-2xl border border-dark-50 p-4 shadow-sm hover:bg-zinc-800 transition overflow-hidden">
+        <div className="relative bg-dark-900 rounded-2xl border border-dark-50 p-4 shadow-sm hover:bg-zinc-800 transition overflow-hidden ">
             <h2 className="text-sm font-semibold text-white mb-2 line-clamp-2">
                 {snippet.title}
             </h2>
