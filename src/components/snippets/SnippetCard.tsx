@@ -1,30 +1,26 @@
 'use client';
 
 import type { Snippet } from './snippets.types';
+import { SnippetPreviewImages } from './SnippetPreviewImages';
 
-type Props = {
+interface SnippetCardProps {
     snippet: Snippet;
-};
+}
 
-export function SnippetCard({ snippet }: Props) {
-    const preview = snippet.content.split('\n')[0];
-
+export function SnippetCard({ snippet }: SnippetCardProps) {
     return (
-        <div className="relative bg-dark-900 rounded-2xl border border-dark-50 p-4 shadow-sm hover:bg-zinc-800 transition overflow-hidden ">
-            <h2 className="text-sm font-semibold text-white mb-2 line-clamp-2">
-                {snippet.title}
-            </h2>
-            <p className="text-xs text-white/60 leading-relaxed line-clamp-3">
-                {preview}
-            </p>
+        <div className="relative bg-dark-900 rounded-2xl border border-dark-50 shadow-sm hover:bg-zinc-800 transition overflow-hidden aspect-square flex flex-col justify-end">
+            {/* Image Stack at Bottom */}
+            <div className="absolute bottom-0 w-full z-0">
+                <SnippetPreviewImages />
+            </div>
 
-            <>
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[5%] bg-dark-900"/>
-                <div
-                    className="pointer-events-none absolute bottom-[10%] left-0 right-0 h-[50%] bg-gradient-to-t from-dark-900 to-transparent"/>
-            </>
+            {/* Title on top of images */}
+            <div className="relative z-10 p-4 bg-gradient-to-t bg-dark-900">
+                <h2 className="text-sm font-semibold text-white line-clamp-2">
+                    {snippet.title}
+                </h2>
+            </div>
         </div>
-
-
     );
 }
