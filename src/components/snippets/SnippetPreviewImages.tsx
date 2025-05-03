@@ -1,14 +1,5 @@
 import Image from 'next/image';
 
-type MiniSnippet = {
-    id: string;
-    preview: string;
-};
-
-type Props = {
-    previews: MiniSnippet[];
-};
-
 
 export function SnippetPreviewImages() {
     return (
