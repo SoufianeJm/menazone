@@ -1,13 +1,13 @@
 import '../styles/globals.css';
 import type {Metadata} from 'next';
-import {JetBrains_Mono} from 'next/font/google';
+import {IBM_Plex_Sans } from 'next/font/google';
 import {IconoirProvider} from 'iconoir-react';
-import {Header} from '@/components/header/Header';
+import {Header} from '@/components/layout/header/Header';
 import {MobileOnly} from '@/components/MobileOnly';
 import {DesktopNotice} from '@/components/DesktopNotice';
 import React from "react";
 
-const mono = JetBrains_Mono({
+const plex = IBM_Plex_Sans ({
     weight: ['400'],
     subsets: ['latin'],
 });
@@ -31,7 +31,7 @@ export default function RootLayout({
                 height: '1.5em',
             }}
         >
-            <body className={`${mono.className} antialiased mx-5`}>
+            <body className={`${plex.className} antialiased`}>
             <MobileOnly>
                 <Header/>
                 {children}

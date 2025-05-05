@@ -17,27 +17,147 @@
   --color-dark-900: #0d0d0d;
   --color-dark-950: #000000;
 
+  /* === COLORS === */
+  --color-bg: #000000;
+  --color-cardColor: #0D0D0D;
+  --color-border-color: rgba(255, 255, 255, 0.08);
+  --color-txt-main: #ffffff;
+  --color-txt-button: rgba(255, 255, 255, 0.6);
+  --color-txt-secondary: rgba(255, 255, 255, 0.5);
+
+  /* === TYPOGRAPHY === */
+  --font-sans: 'Inter';
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-default: 1.5;
+
+  /* === RADIUS === */
+  --radius-default: 8px;
+
+  /* === SPACING SCALE (4-grid based) === */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-4_5: 18px;
+  --space-5: 20px;
+
+  /* === LAYOUT === */
+  --container-padding: 18px;
+  --max-width-mobile: 393px;
+
 }
 
-@theme inline {
-  --color-background: var(--color-dark-950);
-  --color-foreground: var(--color-dark-800);
+
+* {
+  box-sizing: border-box;
 }
 
-
-@layer utilities {
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-dark-950);
-    --foreground: var(--color-dark-800);
-  }
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--line-height-default);
+  font-size: clamp(24px, 6vw, 32px);
 }
 
 body {
-  background: var(--color-dark-950);
-  color: var(--color-dark-800);
-  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--color-bg);
+  color: var(--color-txt-main);
+  font-family: var(--font-sans), sans-serif;
+  line-height: var(--line-height-default);
+  margin: 0;
+  padding: 0;
+}
+
+/* === UTILITY CLASSES === */
+.container-mobile {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Button base */
+.btn {
+  background-color: var(--color-cardColor);
+  border: 1px solid var(--color-border-color);
+  border-radius: var(--radius-default);
+  color: var(--color-txt-secondary);
+  padding: 12px;
+}
+
+/* Wide CTA button (like "Got a protest?") */
+.btn-wide {
+  width: 100%;
+  border-radius: var(--radius-default);
+  background-color: var(--color-cardColor);
+  border: 1px solid var(--color-border-color);
+  padding: 16px;
+  color: var(--color-txt-secondary);
+  text-align: left;
+}
+
+/* Text sizes */
+.text-xs {
+  font-size: clamp(10px, 3.2vw, 12px);
+}
+.text-sm {
+  font-size: clamp(12px, 3.733vw, 14px);
+  line-height: var(--line-height-default);
+}
+.text-base {
+  font-size: clamp(14px, 4.267vw, 16px);
+  line-height: var(--line-height-default);
+}
+
+.text-lg {
+  font-size: clamp(16px, 4.8vw, 18px);
+  line-height: var(--line-height-default);
+}
+
+/* Font weights */
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Border */
+.border-default {
+  border: 1px solid var(--color-border-color);
+}
+
+/* Radius */
+.rounded-default {
+  border-radius: var(--radius-default);
+}
+
+/* Z-index layers (optional base) */
+.z-overlay {
+  z-index: 1000;
+}
+.z-header {
+  z-index: 50;
+}
+
+@media (max-width: 340px) {
+  .container-mobile {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .mobile-card-gap{
+    gap: 8px;
+  }
 }

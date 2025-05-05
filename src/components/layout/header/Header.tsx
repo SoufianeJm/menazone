@@ -6,7 +6,7 @@ import { MenuButton } from './MenuButton';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { SearchButton } from './SearchButton';
 import { MobileMenu } from './MobileMenu';
-import { SearchOverlay } from '@/components/header/SearchOverlay';
+import { SearchOverlay } from '@/components/layout/header/SearchOverlay';
 
 type OverlayType = 'menu' | 'language' | 'search' | null;
 
@@ -45,7 +45,7 @@ export function Header() {
     // Determine wrapper classes based on active overlay
     const getWrapperClasses = () => {
         if (activeOverlay === 'menu') {
-            return 'fixed inset-0 z-50 px-5 bg-black min-h-screen overflow-y-auto';
+            return 'fixed inset-0 z-50 container-mobile bg-black min-h-screen overflow-y-auto';
         }
         return '';
     };

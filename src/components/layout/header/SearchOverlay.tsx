@@ -106,7 +106,7 @@ export function SearchOverlay({ isOpen, onClose }: Props) {
                     aria-modal="true"
                     aria-label="Search"
                 >
-                    <div className="bg-dark-900 rounded-2xl border border-dark-50 p-4 shadow-xl">
+                    <div className="bg-dark-900 text-white/60 rounded-2xl border border-dark-50 p-4 shadow-xl">
                         <input
                             ref={inputRef}
                             type="text"

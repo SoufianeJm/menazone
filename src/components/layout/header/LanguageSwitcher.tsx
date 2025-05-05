@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import { Language } from 'iconoir-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LANGUAGES } from './header.config';
-import { BaseButton } from './BaseButton';
+import { BaseButton } from '../../ui/button/BaseButton';
 
 type Props = {
     /**
@@ -67,7 +67,7 @@ export function LanguageSwitcher({ isOpen, onToggle, onCloseAll }: Props) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute right-0 mt-2 w-36 bg-dark-900 rounded-2xl shadow-lg border border-dark-50 overflow-hidden z-50"
+                        className="absolute right-0 mt-2 w-36 text-white/60 bg-dark-900 rounded-2xl shadow-lg border border-dark-50 overflow-hidden z-50"
                         role="menu"
                     >
                         {LANGUAGES.map((lang) => (
