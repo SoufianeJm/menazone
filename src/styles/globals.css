@@ -64,6 +64,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-default);
+  font-size: clamp(24px, 6vw, 32px);
 }
 
 body {
@@ -103,19 +104,19 @@ body {
 
 /* Text sizes */
 .text-xs {
-  font-size: var(--text-xs);
+  font-size: clamp(10px, 3.2vw, 12px);
 }
 .text-sm {
-  font-size: var(--text-sm);
+  font-size: clamp(12px, 3.733vw, 14px);
   line-height: var(--line-height-default);
 }
 .text-base {
-  font-size: var(--text-base);
+  font-size: clamp(14px, 4.267vw, 16px);
   line-height: var(--line-height-default);
 }
 
 .text-lg {
-  font-size: var(--text-lg);
+  font-size: clamp(16px, 4.8vw, 18px);
   line-height: var(--line-height-default);
 }
 
@@ -149,4 +150,14 @@ body {
 }
 .z-header {
   z-index: 50;
+}
+
+@media (max-width: 340px) {
+  .container-mobile {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .mobile-card-gap{
+    gap: 8px;
+  }
 }

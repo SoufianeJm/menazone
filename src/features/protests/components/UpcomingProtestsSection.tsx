@@ -1,5 +1,7 @@
 import React from 'react';
-import { UpcomingProtestsHeader } from './UpcomingProtestsHeader';
+import { UpcomingProtestsHeader } from '@/features/protests';
+import ProtestDayGroup from './ProtestDayGroup';
+import mockProtestDays from '../data/mockProtests';
 
 export interface UpcomingProtestsSectionProps {
   className?: string;
@@ -11,9 +13,17 @@ export function UpcomingProtestsSection({
   city,
 }: UpcomingProtestsSectionProps) {
   return (
-    <section className={`bg-black ${className}`}>
+    <section className={`bg-black ${className} flex flex-col gap-3`}>
       <UpcomingProtestsHeader city={city} />
-      {/* Protest cards will be added here in the future */}
+      <div className=" flex flex-col gap-4">
+        {mockProtestDays.map((dayGroup, index) => (
+          <ProtestDayGroup 
+            key={index}
+            date={dayGroup.date}
+            protests={dayGroup.protests}
+          />
+        ))}
+      </div>
     </section>
   );
 }

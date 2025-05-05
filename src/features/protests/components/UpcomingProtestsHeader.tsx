@@ -11,7 +11,7 @@ export function UpcomingProtestsHeader({
   className = '',
 }: UpcomingProtestsHeaderProps) {
   return (
-    <div className={`flex justify-between items-center py-4 ${className}`}>
+    <div className={`flex justify-between items-center ${className}`}>
       <h2 className="text-base font-semibold text-txt-main">Upcoming Protests</h2>
       
       <button 
