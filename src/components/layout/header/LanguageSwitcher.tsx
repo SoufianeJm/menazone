@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import { Language } from 'iconoir-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LANGUAGES } from './header.config';
-import { BaseButton } from './BaseButton';
+import { BaseButton } from '../../ui/button/BaseButton';
 
 type Props = {
     /**

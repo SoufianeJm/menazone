@@ -6,7 +6,7 @@ type Props = {
 
 export function MobileOnly({ children }: Props) {
     return (
-        <div className="block md:hidden">
+        <div className="block md:hidden container-mobile">
             {children}
         </div>
     );

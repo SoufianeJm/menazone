@@ -1,4 +1,4 @@
-import type { NavLink, LanguageOption } from './header.types';
+import type { NavLink, LanguageOption } from '../../../types/header.types';
 
 export const NAV_LINKS: NavLink[] = [
     { label: 'Resources', href: '/resources' },
