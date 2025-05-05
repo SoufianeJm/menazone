@@ -9,7 +9,7 @@ export default function ProtestCallToAction({
   className = '',
 }: ProtestCallToActionProps) {
   return (
-    <Link href="/add-protest" className={className}>
+    <Link href="https://menazone.notion.site/1e919f85600380778f1bd9cd227b764a?pvs=105" className={className}>
       <div className="w-full flex items-center justify-between p-4 rounded-default bg-cardColor border-default hover:bg-zinc-800 transition cursor-pointer">
         <div className="flex items-center gap-4">
           <div className="flex items-center border-default justify-center p-[10px] rounded-full bg-cardColor">

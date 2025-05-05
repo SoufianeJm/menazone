@@ -1,10 +1,10 @@
 import type { NavLink, LanguageOption } from '../../../types/header.types';
 
 export const NAV_LINKS: NavLink[] = [
-    { label: 'Resources', href: '/resources' },
-    { label: 'Protests', href: '/protests' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'About Us', href: '/about' },
+    { label: 'Resources', href: '#' },
+    { label: 'Protests', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'About Us', href: '#' },
 ];
 
 export const LANGUAGES: LanguageOption[] = [
