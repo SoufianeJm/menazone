@@ -17,7 +17,7 @@ export default function ProtestCallToAction({
           </div>
           
           <div className="flex flex-col">
-            <span className="text-txt-main font-bold text-base">You got a protest ?</span>
+            <span className="text-txt-main font-semibold text-base">You got a protest ?</span>
             <span className="text-txt-secondary text-sm">Click here and add it</span>
           </div>
         </div>
