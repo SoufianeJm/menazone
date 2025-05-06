@@ -17,5 +17,11 @@
   "ProtestCTA": {
     "title": "You got a protest ?",
     "subtitle": "Click here and add it"
+  },
+  "Protests": {
+    "upcomingProtests": "Upcoming Protests",
+    "changeCity": "Change city from {city}",
+    "searchCity": "Search city...",
+    "noCitiesFound": "No cities found"
   }
 }

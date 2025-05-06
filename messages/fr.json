@@ -17,5 +17,11 @@
   "ProtestCTA": {
     "title": "Vous avez une manifestation ?",
     "subtitle": "Cliquez ici pour l'ajouter"
+  },
+  "Protests": {
+    "upcomingProtests": "Manifestations à venir",
+    "changeCity": "Changer de ville depuis {city}",
+    "searchCity": "Rechercher une ville...",
+    "noCitiesFound": "Aucune ville trouvée"
   }
 }
