@@ -1,9 +1,12 @@
+'use client';
+
 import { NAV_LINKS } from './header.config';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight } from 'iconoir-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 type MobileMenuProps = {
     /**
@@ -50,15 +53,21 @@ const itemVariants = {
 export function MobileMenu({ onClose }: MobileMenuProps) {
     const pathname = usePathname();
     const t = useTranslations();
+    const params = useParams();
+    const lang = (params?.lang as string) || 'en';
 
-    // Check if a link is active (current page)
     const isActiveLink = (href: string) => {
-        // For home page specially handle both '/' and '#'
-        if (href === '#' && (pathname === '/' || pathname === '')) {
+        // Remove the language prefix from both the current path and the link path
+        const currentPath = pathname.replace(/^\/[a-z]{2}/, '');
+        const linkPath = href.replace('{lang}', lang).replace(/^\/[a-z]{2}/, '');
+        
+        // For home page
+        if (linkPath === '/' && (currentPath === '/' || currentPath === '')) {
             return true;
         }
-        // For other pages, check if the path matches the href
-        return href !== '#' && pathname === href;
+        
+        // For other pages
+        return linkPath !== '/' && currentPath === linkPath;
     };
 
     return (
@@ -71,11 +80,12 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         >
             {NAV_LINKS.map((link) => {
                 const isActive = isActiveLink(link.href);
+                const href = link.href.replace('{lang}', lang);
                 
                 return (
-                    <motion.div key={link.href} variants={itemVariants}>
+                    <motion.div key={href} variants={itemVariants}>
                         <Link
-                            href={link.href}
+                            href={href}
                             onClick={onClose}
                             className={`flex items-center justify-between text-sm p-3 rounded-lg 
                                 ${isActive 
