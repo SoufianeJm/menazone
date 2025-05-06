@@ -10,7 +10,7 @@ const ProtestDayGroup: React.FC<ProtestDayGroupProps> = ({ date, protests }) => 
   return (
     <div className="w-full">
       {/* Date header will go here in future implementation */}
-        <h2 className="text-base font-semibold text-white/60 mb-3 px-1">
+        <h2 className="text-base font-semibold text-[var(--color-txt-secondary)] mb-3 px-1">
             {date}
         </h2>
 
