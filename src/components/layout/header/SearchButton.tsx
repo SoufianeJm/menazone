@@ -1,5 +1,3 @@
-'use client';
-
 import { Search, Xmark } from 'iconoir-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { BaseButton } from '../../ui/button/BaseButton';

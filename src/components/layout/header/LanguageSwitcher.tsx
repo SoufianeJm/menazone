@@ -1,10 +1,10 @@
-'use client';
-
 import { useRef, useEffect } from 'react';
 import { Language } from 'iconoir-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LANGUAGES } from './header.config';
 import { BaseButton } from '../../ui/button/BaseButton';
+import { useRouter, usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 type Props = {
     /**
@@ -36,6 +36,9 @@ type Props = {
  */
 export function LanguageSwitcher({ isOpen, onToggle, onCloseAll }: Props) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const router = useRouter();
+    const pathname = usePathname();
+    const t = useTranslations();
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
@@ -51,10 +54,22 @@ export function LanguageSwitcher({ isOpen, onToggle, onCloseAll }: Props) {
         return () => window.removeEventListener('click', handleClickOutside);
     }, [isOpen, onCloseAll]);
 
+    const handleLanguageChange = (code: string) => {
+        onCloseAll();
+        
+        // Get the path without the language prefix
+        const pathWithoutLang = pathname.replace(/^\/[a-z]{2}/, '');
+        
+        // Construct the new path with the selected language
+        const newPath = `/${code}${pathWithoutLang}`;
+        
+        router.push(newPath);
+    };
+
     return (
         <div className="relative" ref={containerRef}>
             <BaseButton
-                aria-label="Change language"
+                aria-label={t('Navigation.changeLanguage')}
                 onClick={onToggle}
             >
                 <Language className="w-4" />
@@ -73,13 +88,10 @@ export function LanguageSwitcher({ isOpen, onToggle, onCloseAll }: Props) {
                         {LANGUAGES.map((lang) => (
                             <li key={lang.code} role="menuitem">
                                 <button
-                                    onClick={() => {
-                                        onCloseAll();
-                                        // TODO: Hook up i18n routing here
-                                    }}
+                                    onClick={() => handleLanguageChange(lang.code)}
                                     className="w-full text-left px-4 py-2 text-sm hover:bg-zinc-800 transition"
                                 >
-                                    {lang.label}
+                                    {t(lang.label)}
                                 </button>
                             </li>
                         ))}

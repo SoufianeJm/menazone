@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useRef, useState, KeyboardEvent } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Home, PageEdit, Calendar } from 'iconoir-react';

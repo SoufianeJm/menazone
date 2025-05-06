@@ -1,10 +1,9 @@
-'use client';
-
 import { NAV_LINKS } from './header.config';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight } from 'iconoir-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 type MobileMenuProps = {
     /**
@@ -50,6 +49,7 @@ const itemVariants = {
  */
 export function MobileMenu({ onClose }: MobileMenuProps) {
     const pathname = usePathname();
+    const t = useTranslations();
 
     // Check if a link is active (current page)
     const isActiveLink = (href: string) => {
@@ -84,7 +84,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                                 } transition`}
                             aria-current={isActive ? 'page' : undefined}
                         >
-                            <span className="font-medium">{link.label}</span>
+                            <span className="font-medium">{t(link.label)}</span>
                             <ArrowUpRight className="w-4" />
                         </Link>
                     </motion.div>

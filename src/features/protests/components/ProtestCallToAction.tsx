@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { NavArrowRight, Plus } from 'iconoir-react';
+import { useTranslations } from 'next-intl';
 
 type ProtestCallToActionProps = {
   className?: string;
@@ -8,6 +11,8 @@ type ProtestCallToActionProps = {
 export default function ProtestCallToAction({
   className = '',
 }: ProtestCallToActionProps) {
+  const t = useTranslations();
+
   return (
     <Link href="https://menazone.notion.site/1e919f85600380778f1bd9cd227b764a?pvs=105" className={className}>
       <div className="w-full flex items-center justify-between p-4 rounded-default bg-cardColor border-default hover:bg-zinc-800 transition cursor-pointer">
@@ -17,8 +22,8 @@ export default function ProtestCallToAction({
           </div>
           
           <div className="flex flex-col">
-            <span className="text-txt-main font-semibold text-base">You got a protest ?</span>
-            <span className="text-txt-secondary text-sm">Click here and add it</span>
+            <span className="text-txt-main font-semibold text-base">{t('ProtestCTA.title')}</span>
+            <span className="text-txt-secondary text-sm">{t('ProtestCTA.subtitle')}</span>
           </div>
         </div>
         

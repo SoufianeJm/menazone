@@ -1,13 +1,13 @@
 import type { NavLink, LanguageOption } from '../../../types/header.types';
 
 export const NAV_LINKS: NavLink[] = [
-    { label: 'Home', href: '/' },
-    { label: 'Get Involved', href: '/Get-involved' },
-    { label: 'Reach out', href: '/Reach-out' },
-    { label: 'About Menazone', href: '/About-Menazone' },
+    { label: 'Navigation.home', href: '/' },
+    { label: 'Navigation.getInvolved', href: '/Get-involved' },
+    { label: 'Navigation.reachOut', href: '/Reach-out' },
+    { label: 'Navigation.aboutMenazone', href: '/About-Menazone' },
 ];
 
 export const LANGUAGES: LanguageOption[] = [
-    { label: 'Arabic', code: 'ar' },
-    { label: 'English', code: 'en' },
+    { label: 'Languages.french', code: 'fr' },
+    { label: 'Languages.english', code: 'en' },
 ];
