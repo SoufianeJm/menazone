@@ -13,9 +13,9 @@ export function UpcomingProtestsSection({
   city,
 }: UpcomingProtestsSectionProps) {
   return (
-    <section className={`bg-black ${className} flex flex-col gap-3`}>
+    <section className={`bg-[var(--color-bg)] ${className} flex flex-col gap-3`}>
       <UpcomingProtestsHeader city={city} />
-      <div className=" flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         {mockProtestDays.map((dayGroup, index) => (
           <ProtestDayGroup 
             key={index}

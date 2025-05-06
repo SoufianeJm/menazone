@@ -23,5 +23,8 @@
     "changeCity": "Change city from {city}",
     "searchCity": "Search city...",
     "noCitiesFound": "No cities found"
+  },
+  "Theme": {
+    "toggle": "Switch to {mode} mode"
   }
 }

@@ -89,8 +89,8 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                             onClick={onClose}
                             className={`flex items-center justify-between text-sm p-3 rounded-lg 
                                 ${isActive 
-                                    ? 'text-white/70 bg-white/15' 
-                                    : 'text-white/60 bg-dark-900 border border-dark-50 hover:bg-zinc-800'
+                                    ? 'text-[var(--color-txt-main)] bg-[var(--color-cardColor)]' 
+                                    : 'text-[var(--color-txt-secondary)] bg-[var(--color-cardColor)] border border-[var(--color-border-color)] hover:bg-[var(--color-cardColor-hover)]'
                                 } transition`}
                             aria-current={isActive ? 'page' : undefined}
                         >

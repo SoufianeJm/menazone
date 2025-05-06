@@ -23,5 +23,8 @@
     "changeCity": "Changer de ville depuis {city}",
     "searchCity": "Rechercher une ville...",
     "noCitiesFound": "Aucune ville trouvée"
+  },
+  "Theme": {
+    "toggle": "Passer en mode {mode}"
   }
 }

@@ -9,6 +9,7 @@ import React from "react";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 const manrope = Manrope({
     weight: ['400'],
@@ -34,7 +35,7 @@ export default async function RootLayout({
     }
 
     return (
-        <html lang={locale}>
+        <html lang={locale} className="dark">
         <IconoirProvider
             iconProps={{
                 color: 'currentColor',
@@ -44,11 +45,13 @@ export default async function RootLayout({
         >
             <body className={`${manrope.className} antialiased`}>
             <NextIntlClientProvider>
-                <MobileOnly>
-                    <Header/>
-                    {children}
-                </MobileOnly>
-                <DesktopNotice/>
+                <ThemeProvider>
+                    <MobileOnly>
+                        <Header/>
+                        {children}
+                    </MobileOnly>
+                    <DesktopNotice/>
+                </ThemeProvider>
             </NextIntlClientProvider>
             </body>
         </IconoirProvider>

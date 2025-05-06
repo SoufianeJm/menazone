@@ -18,7 +18,7 @@ export function UpcomingProtestsHeader({
 
   return (
     <div className={`flex justify-between items-center ${className}`}>
-      <h2 className="text-base font-semibold text-txt-main">{t('Protests.upcomingProtests')}</h2>
+      <h2 className="text-base font-semibold text-[var(--color-txt-main)]">{t('Protests.upcomingProtests')}</h2>
       
       <CityDropdown 
         currentCity={city}
