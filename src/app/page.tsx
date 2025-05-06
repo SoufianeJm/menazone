@@ -1,5 +1,3 @@
-'use client';
-
 import {ProtestCallToAction, UpcomingProtestsSection} from "@/features/protests";
 
 export default function Home() {
