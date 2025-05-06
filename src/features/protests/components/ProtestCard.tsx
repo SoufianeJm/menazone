@@ -44,6 +44,7 @@ export const ProtestCard: React.FC<ProtestCardProps> = ({
                     width={110}
                     height={110}
                     className="object-cover aspect-square"
+
                 />
             </div>
         </div>

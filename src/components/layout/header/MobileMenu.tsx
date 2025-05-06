@@ -2,6 +2,7 @@
 
 import { NAV_LINKS } from './header.config';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ArrowUpRight } from 'iconoir-react';
 import { motion } from 'framer-motion';
 
@@ -45,8 +46,21 @@ const itemVariants = {
  * - Uses Framer Motion for staggered item animations
  * - Links are sourced from the centralized NAV_LINKS config
  * - Clicking a link calls `onClose` to dismiss the menu
+ * - Highlights the active link based on current path
  */
 export function MobileMenu({ onClose }: MobileMenuProps) {
+    const pathname = usePathname();
+
+    // Check if a link is active (current page)
+    const isActiveLink = (href: string) => {
+        // For home page specially handle both '/' and '#'
+        if (href === '#' && (pathname === '/' || pathname === '')) {
+            return true;
+        }
+        // For other pages, check if the path matches the href
+        return href !== '#' && pathname === href;
+    };
+
     return (
         <motion.div
             variants={containerVariants}
@@ -55,18 +69,27 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             exit="hidden"
             className="flex flex-col gap-2"
         >
-            {NAV_LINKS.map((link) => (
-                <motion.div key={link.href} variants={itemVariants}>
-                    <Link
-                        href={link.href}
-                        onClick={onClose}
-                        className="flex items-center justify-between text-sm p-3 rounded-lg text-white/60 bg-dark-900 border border-dark-50 hover:bg-zinc-800 transition"
-                    >
-                        <span className="font-medium">{link.label}</span>
-                        <ArrowUpRight className="w-4" />
-                    </Link>
-                </motion.div>
-            ))}
+            {NAV_LINKS.map((link) => {
+                const isActive = isActiveLink(link.href);
+                
+                return (
+                    <motion.div key={link.href} variants={itemVariants}>
+                        <Link
+                            href={link.href}
+                            onClick={onClose}
+                            className={`flex items-center justify-between text-sm p-3 rounded-lg 
+                                ${isActive 
+                                    ? 'text-white/70 bg-white/15' 
+                                    : 'text-white/60 bg-dark-900 border border-dark-50 hover:bg-zinc-800'
+                                } transition`}
+                            aria-current={isActive ? 'page' : undefined}
+                        >
+                            <span className="font-medium">{link.label}</span>
+                            <ArrowUpRight className="w-4" />
+                        </Link>
+                    </motion.div>
+                );
+            })}
         </motion.div>
     );
 }

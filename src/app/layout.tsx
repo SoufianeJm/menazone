@@ -1,13 +1,13 @@
 import '../styles/globals.css';
 import type {Metadata} from 'next';
-import {IBM_Plex_Sans } from 'next/font/google';
+import {Inter} from 'next/font/google';
 import {IconoirProvider} from 'iconoir-react';
 import {Header} from '@/components/layout/header/Header';
 import {MobileOnly} from '@/components/MobileOnly';
 import {DesktopNotice} from '@/components/DesktopNotice';
 import React from "react";
 
-const plex = IBM_Plex_Sans ({
+const inter = Inter({
     weight: ['400'],
     subsets: ['latin'],
 });
@@ -31,7 +31,7 @@ export default function RootLayout({
                 height: '1.5em',
             }}
         >
-            <body className={`${plex.className} antialiased`}>
+            <body className={`${inter.className} antialiased`}>
             <MobileOnly>
                 <Header/>
                 {children}

@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background-color: var(--color-bg);
   color: var(--color-txt-main);
-  font-family: var(--font-sans), sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: var(--line-height-default);
   margin: 0;
   padding: 0;
