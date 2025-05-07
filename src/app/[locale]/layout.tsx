@@ -1,7 +1,6 @@
 import '../../styles/globals.css';
 import type {Metadata} from 'next';
 import {Manrope} from 'next/font/google';
-import {IconoirProvider} from 'iconoir-react';
 import {Header} from '@/components/layout/header/Header';
 import {MobileOnly} from '@/components/MobileOnly';
 import {DesktopNotice} from '@/components/DesktopNotice';
@@ -36,13 +35,6 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} className="dark">
-        <IconoirProvider
-            iconProps={{
-                color: 'currentColor',
-                strokeWidth: 1.5,
-                height: '1.5em',
-            }}
-        >
             <body className={`${manrope.className} antialiased`}>
             <NextIntlClientProvider>
                 <ThemeProvider>
@@ -54,7 +46,6 @@ export default async function RootLayout({
                 </ThemeProvider>
             </NextIntlClientProvider>
             </body>
-        </IconoirProvider>
         </html>
     );
 }

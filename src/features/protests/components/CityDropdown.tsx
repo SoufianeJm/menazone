@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { NavArrowDown, Search } from 'iconoir-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import {ChevronDownIcon} from "@/components/icons/ChevronDownIcon";
+import {SearchIcon} from "@/components/icons/SearchIcon";
 
 const CITIES = [
     'Casablanca',
@@ -52,7 +53,7 @@ export function CityDropdown({ currentCity, onCityChange }: CityDropdownProps) {
                 aria-label={t('Protests.changeCity', { city: currentCity })}
             >
                 <span>{currentCity}</span>
-                <NavArrowDown 
+                <ChevronDownIcon
                     width={16} 
                     height={16} 
                     className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
@@ -70,7 +71,7 @@ export function CityDropdown({ currentCity, onCityChange }: CityDropdownProps) {
                     >
                         <div className="p-2">
                             <div className="relative">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+                                <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                                 <input
                                     type="text"
                                     value={searchQuery}

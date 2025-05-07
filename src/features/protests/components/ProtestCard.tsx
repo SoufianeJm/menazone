@@ -1,6 +1,8 @@
-import {Clock, MapPin} from 'iconoir-react';
+
 import Image from 'next/image';
 import React from 'react';
+import {LocationIcon} from "@/components/icons/LocationIcon";
+import {ClockIcon} from "@/components/icons/ClockIcon";
 
 export interface ProtestCardProps {
     title: string;
@@ -26,11 +28,11 @@ export const ProtestCard: React.FC<ProtestCardProps> = ({
                 <p className="text-sm text-txt-secondary line-clamp-1">By {organizer}</p>
                 <div className="flex flex-col gap-1.5 text-sm text-txt-secondary">
                     <div className="flex items-center gap-1 whitespace-nowrap">
-                        <Clock className="w-4 h-4 flex-shrink-0"/>
+                        <ClockIcon className="w-4 h-4 flex-shrink-0"/>
                         <span>{time}</span>
                     </div>
                     <div className="flex items-center gap-1  min-w-0">
-                        <MapPin className="w-4 h-4 flex-shrink-0"/>
+                        <LocationIcon className="w-4 h-4 flex-shrink-0"/>
                         <span className="truncate">{location}</span>
                     </div>
                 </div>

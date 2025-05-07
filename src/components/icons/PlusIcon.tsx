@@ -1,6 +1,6 @@
 import { SVGProps } from 'react';
 
-export function XmarkIcon(props: SVGProps<SVGSVGElement>) {
+export function PlusIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             viewBox="0 0 24 24"
