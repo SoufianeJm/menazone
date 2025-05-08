@@ -1,14 +1,12 @@
 import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const withNextIntl = createNextIntlPlugin();
-const withAnalyzer = withBundleAnalyzer({
-    enabled: process.env.ANALYZE === 'true',
-});
 
 const nextConfig: NextConfig = {
-    // Your regular config
+  images: {
+    remotePatterns: [{ hostname: 'cdn.sanity.io' }],
+  },
 };
 
-export default withAnalyzer(withNextIntl(nextConfig));
+export default withNextIntl(nextConfig);
