@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "Menazone est actuellement optimisé pour mobile.",
+    "notice": "En raison de l'urgence de la situation, nous avons donné la priorité au mobile pour lancer plus rapidement.\nLe support pour les ordinateurs de bureau et les tablettes arrive bientôt."
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "getInvolved": "S'impliquer",
+    "reachOut": "Nous contacter",
+    "aboutMenazone": "À propos de Menazone",
+    "changeLanguage": "Changer de langue"
+  },
+  "Languages": {
+    "french": "Français",
+    "english": "Anglais"
+  },
+  "ProtestCTA": {
+    "title": "Vous avez une manifestation ?",
+    "subtitle": "Cliquez ici pour l'ajouter"
+  },
+  "Protests": {
+    "upcomingProtests": "Manifestations à venir",
+    "changeCity": "Changer de ville depuis {city}",
+    "searchCity": "Rechercher une ville...",
+    "noCitiesFound": "Aucune ville trouvée"
+  },
+  "Theme": {
+    "toggle": "Passer en mode {mode}"
+  }
+}

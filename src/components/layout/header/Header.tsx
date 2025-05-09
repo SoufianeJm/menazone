@@ -4,11 +4,10 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { MenuButton } from './MenuButton';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { SearchButton } from './SearchButton';
+import { ThemeToggle } from './ThemeToggle';
 import { MobileMenu } from './MobileMenu';
-import { SearchOverlay } from '@/components/layout/header/SearchOverlay';
 
-type OverlayType = 'menu' | 'language' | 'search' | null;
+type OverlayType = 'menu' | 'language' | null;
 
 export function Header() {
     const [activeOverlay, setActiveOverlay] = useState<OverlayType>(null);
@@ -45,7 +44,7 @@ export function Header() {
     // Determine wrapper classes based on active overlay
     const getWrapperClasses = () => {
         if (activeOverlay === 'menu') {
-            return 'fixed inset-0 z-50 container-mobile bg-black min-h-screen overflow-y-auto';
+            return 'fixed inset-0 z-50 container-mobile bg-[var(--color-bg)] min-h-screen overflow-y-auto';
         }
         return '';
     };
@@ -73,22 +72,18 @@ export function Header() {
                     />
                 </div>
 
-                {/* Right: Lang + Search */}
+                {/* Right: Lang + Theme */}
                 <div className="flex items-center gap-2">
                     <LanguageSwitcher
                         isOpen={activeOverlay === 'language'}
                         onToggle={() => toggle('language')}
                         onCloseAll={closeAll}
                     />
-                    <SearchButton
-                        isOpen={activeOverlay === 'search'}
-                        onToggle={() => toggle('search')}
-                    />
+                    <ThemeToggle />
                 </div>
             </header>
 
             {/* Overlays */}
-            <SearchOverlay isOpen={activeOverlay === 'search'} onClose={closeAll} />
             {activeOverlay === 'menu' && <MobileMenu onClose={closeAll} />}
         </div>
     );

@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "Menazone is currently mobile-first.",
+    "notice": "Due to the urgency of the situation, we prioritized mobile to launch faster.\nDesktop and tablet support is coming soon."
+  },
+  "Navigation": {
+    "home": "Home",
+    "getInvolved": "Get Involved",
+    "reachOut": "Reach out",
+    "aboutMenazone": "About Menazone",
+    "changeLanguage": "Change language"
+  },
+  "Languages": {
+    "french": "French",
+    "english": "English"
+  },
+  "ProtestCTA": {
+    "title": "You got a protest ?",
+    "subtitle": "Click here and add it"
+  },
+  "Protests": {
+    "upcomingProtests": "Upcoming Protests",
+    "changeCity": "Change city from {city}",
+    "searchCity": "Search city...",
+    "noCitiesFound": "No cities found"
+  },
+  "Theme": {
+    "toggle": "Switch to {mode} mode"
+  }
+}
