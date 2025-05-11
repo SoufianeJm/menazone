@@ -19,7 +19,7 @@
     "subtitle": "Click here and add it"
   },
   "Protests": {
-    "upcomingProtests": "Upcoming Protests",
+    "upcomingProtests": "Upcoming Protests in",
     "changeCity": "Change city from {city}",
     "searchCity": "Search city...",
     "noCitiesFound": "No cities found"

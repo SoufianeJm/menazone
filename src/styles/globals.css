@@ -51,7 +51,7 @@
 
 :root[class~="dark"] {
   /* Dark mode colors */
-  --color-bg: #141517;
+  --color-bg: #131517;
   --color-cardColor: rgba(255, 255, 255, 0.04);
   --color-cardColor-hover: #1a1a1a;
   --color-border-color: rgba(255, 255, 255, 0.08);

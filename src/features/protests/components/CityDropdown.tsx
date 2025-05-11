@@ -35,19 +35,19 @@ export function CityDropdown({ currentCity, onCityChange, className }: CityDropd
     );
 
     return (
-        <div className={`relative ${className || ''}`} ref={dropdownRef}>
+        <div className={`relative min-w-0 w-full ${className || ''}`} ref={dropdownRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-1 text-base font-semibold text-white/60 hover:text-white/80 transition"
-                aria-label={t('Protests.changeCity', { city: currentCity })} // Assuming 'Protests.changeCity' key
+                className="flex items-center gap-1 text-base font-semibold text-white/60 hover:text-white/80 transition min-w-0 w-full"
+                aria-label={t('Protests.changeCity', { city: currentCity })}
                 aria-expanded={isOpen}
                 aria-haspopup="listbox"
             >
-                <span>{currentCity}</span>
+                <span className="truncate">{currentCity}</span>
                 <ChevronDownIcon
                     width={16}
                     height={16}
-                    className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    className={`transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
                     aria-hidden="true"
                 />
             </button>
@@ -59,7 +59,7 @@ export function CityDropdown({ currentCity, onCityChange, className }: CityDropd
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute right-0 mt-2 w-64 bg-dark-900 rounded-2xl shadow-lg border border-dark-50 overflow-hidden z-50"
+                        className="absolute left-0 right-0 mt-2 w-full max-w-[min(20rem,100vw)] bg-dark-900 rounded-2xl shadow-lg border border-dark-50 overflow-hidden z-50"
                         role="listbox"
                         aria-labelledby="city-dropdown-button" // Assuming the button would have this id if needed
                     >

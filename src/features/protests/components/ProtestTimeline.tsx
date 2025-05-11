@@ -12,7 +12,6 @@ import {
 import { groupProtestsByDay } from '@/features/protests/utils/constants';
 import { fetchProtests } from '@/lib/fetchProtests';
 import { SanityProtest } from '../types';
-import {MegaphoneIcon} from "@/components/icons/Megaphone";
 
 export default async function ProtestTimeline() {
     const protests = await fetchProtests() as SanityProtest[];
@@ -36,9 +35,9 @@ export default async function ProtestTimeline() {
                             </span>
                         </TimelineTitle>
                         <TimelineIndicator
-                            className="ml-3 size-6 border-none bg-primary/10 group-data-[completed]/timeline-item:text-primary-foreground flex items-center justify-center"
+                            className="ml-3 mt-2 size-2 border-none bg-primary/60 group-data-[completed]/timeline-item:text-primary-foreground flex items-center justify-center"
                         >
-                            <MegaphoneIcon className="w-3 h-3 text-primary" />
+
                         </TimelineIndicator>
                     </TimelineHeader>
                     

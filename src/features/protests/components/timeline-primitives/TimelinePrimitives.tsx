@@ -93,7 +93,7 @@ export function TimelineItem({ step, className, children, ...props }: TimelineIt
                 "group/timeline-item relative flex flex-1 flex-col gap-0.5",
                 orientation === "horizontal"
                     ? "mt-8 not-last:pe-8"
-                    : "ms-8 not-last:pb-12", // Original: ms-8 not-last:pb-12. The pb-8 was in the ProtestTimeline's TimelineItem override
+                    : "ms-6 not-last:pb-12", // Original: ms-8 not-last:pb-12. The pb-8 was in the ProtestTimeline's TimelineItem override
                 className
             )}
             data-completed={isCompleted || undefined}
@@ -225,7 +225,7 @@ export function TimelineSeparator({
             className={cn(
                 "border-l-2 border-dashed absolute self-start group-last/timeline-item:hidden", // Common classes
                 orientation === "horizontal"
-                    ? "-top-6 h-0.5 w-[calc(100%-1rem-0.25rem)] translate-x-4.5 -translate-y-1/2" // Original: -top-6 group-data-[orientation=horizontal]/timeline:h-0.5 group-data-[orientation=horizontal]/timeline:w-[calc(100%-1rem-0.25rem)] group-data-[orientation=horizontal]/timeline:translate-x-4.5 group-data-[orientation=horizontal]/timeline:-translate-y-1/2
+                    ? "-top-0 h-0.5 w-[calc(100%-1rem-0.25rem)] translate-x-4.5 -translate-y-1/2" // Original: -top-6 group-data-[orientation=horizontal]/timeline:h-0.5 group-data-[orientation=horizontal]/timeline:w-[calc(100%-1rem-0.25rem)] group-data-[orientation=horizontal]/timeline:translate-x-4.5 group-data-[orientation=horizontal]/timeline:-translate-y-1/2
                     : "-left-6 h-[calc(100%-1rem-0.25rem)] w-0.5 -translate-x-1/2 translate-y-4.5", // Original: -left-6 group-data-[orientation=vertical]/timeline:h-[calc(100%-1rem-0.25rem)] group-data-[orientation=vertical]/timeline:w-0.5 group-data-[orientation=vertical]/timeline:-translate-x-1/2 group-data-[orientation=vertical]/timeline:translate-y-4.5
                 className
             )}
