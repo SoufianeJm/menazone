@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import {Megaphone} from 'lucide-react';
-import {LocationIcon} from '@/components/icons/LocationIcon';
+import { LocationIcon } from '@/components/icons/LocationIcon';
 import {
     Timeline,
     TimelineContent,
@@ -10,12 +9,14 @@ import {
     TimelineSeparator,
     TimelineTitle,
 } from '@/features/protests/components/timeline-primitives';
-import {groupProtestsByDay, MOCK_PROTEST_ITEMS} from '@/features/protests/utils/constants';
+import { groupProtestsByDay } from '@/features/protests/utils/constants';
+import { fetchProtests } from '@/lib/fetchProtests';
+import { SanityProtest } from '../types';
+import {MegaphoneIcon} from "@/components/icons/Megaphone";
 
-
-export default function ProtestTimeline() {
-    // If items prop is used, replace MOCK_PROTEST_ITEMS with items
-    const groupedProtests = groupProtestsByDay(MOCK_PROTEST_ITEMS);
+export default async function ProtestTimeline() {
+    const protests = await fetchProtests() as SanityProtest[];
+    const groupedProtests = groupProtestsByDay(protests);
 
     return (
         <Timeline>
@@ -35,16 +36,15 @@ export default function ProtestTimeline() {
                             </span>
                         </TimelineTitle>
                         <TimelineIndicator
-                            className="ml-3 size-6 border-none bg-primary/10 group-data-[completed]/timeline-item:bg-primary group-data-[completed]/timeline-item:text-primary-foreground flex items-center justify-center"
+                            className="ml-3 size-6 border-none bg-primary/10 group-data-[completed]/timeline-item:text-primary-foreground flex items-center justify-center"
                         >
-                            <Megaphone size={14} />
+                            <MegaphoneIcon className="w-3 h-3 text-primary" />
                         </TimelineIndicator>
                     </TimelineHeader>
                     
-                    {/* Render all protests for this day */}
                     {group.protests.map((protest, protestIndex) => (
                         <TimelineContent
-                            key={protest.id}
+                            key={`${protest.id}-${protestIndex}`}
                             className={`bg-cardColor text-foreground flex justify-between gap-4 w-full rounded-default border px-3 py-3 overflow-ellipsis ${
                                 protestIndex === 0 ? 'mt-2' : 'mt-3'
                             }`}
@@ -56,8 +56,8 @@ export default function ProtestTimeline() {
                                 <h3 className="text-base font-semibold text-white">{protest.title}</h3>
                                 <p className="text-sm text-txt-secondary line-clamp-1 font-medium">By {protest.organizer}</p>
                                 <div className="flex items-center gap-1 min-w-0 text-sm text-txt-secondary font-medium">
-                                    <LocationIcon className="w-3 h-3 flex-shrink-0"/>
-                                    <span className="truncate">{protest.location}</span>
+                                    <LocationIcon className="w-3 h-3 flex-shrink-0" />
+                                    <span className="truncate">{protest.location.city}</span>
                                 </div>
                             </div>
 
@@ -73,6 +73,7 @@ export default function ProtestTimeline() {
                                 </div>
                             )}
                         </TimelineContent>
+
                     ))}
                 </TimelineItem>
             ))}
