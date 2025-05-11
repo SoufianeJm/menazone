@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { Megaphone } from 'lucide-react';
-import { ClockIcon } from '@/components/icons/ClockIcon';
-import { LocationIcon } from '@/components/icons/LocationIcon';
+import {Megaphone} from 'lucide-react';
+import {LocationIcon} from '@/components/icons/LocationIcon';
 import {
     Timeline,
     TimelineContent,
@@ -11,18 +10,12 @@ import {
     TimelineSeparator,
     TimelineTitle,
 } from '@/features/protests/components/timeline-primitives';
-import { MOCK_PROTEST_ITEMS, ProtestItemData, groupProtestsByDay, GroupedProtest } from '@/features/protests/utils/constants';
+import {groupProtestsByDay, MOCK_PROTEST_ITEMS} from '@/features/protests/utils/constants';
 
-interface ProtestTimelineProps {
-    // Props like 'city' could be added here to fetch/filter protests
-    // For now, it uses the mock data directly.
-    // items?: ProtestItemData[]; // Allow passing items as a prop
-}
 
-export default function ProtestTimeline({ /* items = MOCK_PROTEST_ITEMS */ }: ProtestTimelineProps) {
+export default function ProtestTimeline() {
     // If items prop is used, replace MOCK_PROTEST_ITEMS with items
-    const protestItems = MOCK_PROTEST_ITEMS;
-    const groupedProtests = groupProtestsByDay(protestItems);
+    const groupedProtests = groupProtestsByDay(MOCK_PROTEST_ITEMS);
 
     return (
         <Timeline>
