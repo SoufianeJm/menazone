@@ -10,7 +10,8 @@
     "type-check": "tsc -b",
     "format": "prettier --write .",
     "lint:fix": "next lint --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "vercel-build": "npm install --legacy-peer-deps && next build"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.2.5",
