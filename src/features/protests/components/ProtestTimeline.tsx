@@ -28,7 +28,7 @@ export default async function ProtestTimeline() {
                     <TimelineHeader>
                         <TimelineSeparator className="ml-3 h-[calc(100%-1.5rem-0.25rem)] translate-y-[1.625rem]" />
                         
-                        <TimelineTitle className="pl-1 mt-0.5 text-white font-semibold">
+                        <TimelineTitle className="pl-1 mt-0.5 text-primary font-semibold">
                             {group.formattedDate}{"   "}
                             <span className="text-muted-foreground text-sm font-semibold">
                                 &nbsp;{group.dayOfWeek}
@@ -44,15 +44,15 @@ export default async function ProtestTimeline() {
                     {group.protests.map((protest, protestIndex) => (
                         <TimelineContent
                             key={`${protest.id}-${protestIndex}`}
-                            className={`bg-cardColor text-foreground flex justify-between gap-4 w-full rounded-default border px-3 py-3 overflow-ellipsis ${
+                            className={`bg-cardColor text-foreground flex justify-between gap-4 w-full rounded-default border border-cardColor px-3 py-3 overflow-ellipsis ${
                                 protestIndex === 0 ? 'mt-2' : 'mt-3'
                             }`}
                         >
                             <div className="flex flex-col gap-1 min-w-0">
-                                <div className="whitespace-nowrap text-sm text-[#f2ca77] font-medium">
+                                <div className="whitespace-nowrap text-sm text-warning font-medium">
                                     <span>{protest.time}</span>
                                 </div>
-                                <h3 className="text-base font-semibold text-white">{protest.title}</h3>
+                                <h3 className="text-base font-semibold text-primary">{protest.title}</h3>
                                 <p className="text-sm text-txt-secondary line-clamp-1 font-medium">By {protest.organizer}</p>
                                 <div className="flex items-center gap-1 min-w-0 text-sm text-txt-secondary font-medium">
                                     <LocationIcon className="w-3 h-3 flex-shrink-0" />
