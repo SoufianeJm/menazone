@@ -1,6 +1,6 @@
 import '../../styles/globals.css';
 import type {Metadata} from 'next';
-import {Manrope} from 'next/font/google';
+import {Inter} from 'next/font/google';
 import {Header} from '@/components/layout/header/Header';
 import {MobileOnly} from '@/components/MobileOnly';
 import {DesktopNotice} from '@/components/DesktopNotice';
@@ -10,7 +10,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
-const manrope = Manrope({
+const inter = Inter({
     weight: ['400'],
     subsets: ['latin'],
 });
@@ -35,7 +35,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} className="dark">
-            <body className={`${manrope.className} antialiased`}>
+            <body className={`${inter.className} antialiased`}>
             <NextIntlClientProvider>
                 <ThemeProvider>
                     <MobileOnly>

@@ -28,10 +28,10 @@ export default async function ProtestTimeline() {
                     <TimelineHeader>
                         <TimelineSeparator className="ml-3 h-[calc(100%-1.5rem-0.25rem)] translate-y-[1.625rem]" />
                         
-                        <TimelineTitle className="pl-1 mt-0.5">
-                            {group.formattedDate}{" "}
-                            <span className="text-muted-foreground text-sm font-normal">
-                                {group.dayOfWeek}
+                        <TimelineTitle className="pl-1 mt-0.5 text-white font-semibold">
+                            {group.formattedDate}{"   "}
+                            <span className="text-muted-foreground text-sm font-semibold">
+                                &nbsp;{group.dayOfWeek}
                             </span>
                         </TimelineTitle>
                         <TimelineIndicator
@@ -49,7 +49,7 @@ export default async function ProtestTimeline() {
                             }`}
                         >
                             <div className="flex flex-col gap-1 min-w-0">
-                                <div className="whitespace-nowrap text-sm text-txt-secondary font-medium">
+                                <div className="whitespace-nowrap text-sm text-[#f2ca77] font-medium">
                                     <span>{protest.time}</span>
                                 </div>
                                 <h3 className="text-base font-semibold text-white">{protest.title}</h3>
@@ -65,8 +65,8 @@ export default async function ProtestTimeline() {
                                     <Image
                                         src={protest.imageUrl}
                                         alt={protest.title || 'Protest image'}
-                                        width={110}
-                                        height={110}
+                                        width={100}
+                                        height={100}
                                         className="object-cover aspect-square"
                                     />
                                 </div>
