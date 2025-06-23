@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { MenuButton } from './MenuButton';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ThemeToggle } from './ThemeToggle';
 import { MobileMenu } from './MobileMenu';
+import MenazoneLogo from "@/components/icons/MenazoneLogo";
 
 type OverlayType = 'menu' | 'language' | null;
 
@@ -62,14 +62,7 @@ export function Header() {
 
                 {/* Center: Logo */}
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <Image
-                        src="/images/menazone_logo.svg"
-                        alt="Menazone logo"
-                        width={40}
-                        height={30}
-                        className="object-contain"
-                        priority
-                    />
+                    <MenazoneLogo className="w-8 h-8 text-logo"/>
                 </div>
 
                 {/* Right: Lang + Theme */}

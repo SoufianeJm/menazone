@@ -1,10 +1,12 @@
-import {ProtestCallToAction, UpcomingProtestsSection} from "@/features/protests";
+
+import ProtestCTA from "@/features/protests/components/ProtestCTA";
+import {UpcomingProtestsSection} from "@/features/protests/components/UpcomingProtestsSection";
 
 export default function Home() {
 
   return (
       <main className="flex flex-col gap-5 mt-1">
-          <ProtestCallToAction />
+          <ProtestCTA />
           <UpcomingProtestsSection />
       </main>
   );
